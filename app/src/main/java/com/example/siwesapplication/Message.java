@@ -2,9 +2,10 @@ package com.example.siwesapplication;
 
 import java.util.Date;
 
+
+import java.util.Date;
+
 public class Message {
-    private String supervisorId;
- 
     private String messageId;
     private String senderId;
     private String receiverId;
@@ -12,16 +13,12 @@ public class Message {
     private Date timestamp;
 
     // Constructor
-    public Message(String messageId,String supervisorId, String senderId, String receiverId, String content, Date timestamp) {
+    public Message(String messageId, String senderId, String receiverId, String content, Date timestamp) {
         this.messageId = messageId;
-        this.supervisorId = supervisorId;
         this.senderId = senderId;
         this.receiverId = receiverId;
         this.content = content;
         this.timestamp = timestamp;
-    }
-
-    public Message(String supervisorId, String content) {
     }
 
     // Methods

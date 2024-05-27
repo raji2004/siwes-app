@@ -3,6 +3,13 @@ package com.example.siwesapplication;
 import java.util.List;
 import java.util.ArrayList;
 
+
+
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.UUID;
+
 public class Student {
     private String studentId;
     private String name;
@@ -39,8 +46,12 @@ public class Student {
         return grades;
     }
 
-    public void sendMessage(String supervisorId, String content) {
-        Message message = new Message(supervisorId, content);
+    public void sendMessage(String receiverId, String content) {
+        String messageId = UUID.randomUUID().toString();
+        String senderId = this.studentId; // Assuming the student is the sender
+        Date timestamp = new Date();
+
+        Message message = new Message(messageId, senderId, receiverId, content, timestamp);
         messages.add(message);
     }
 
@@ -121,4 +132,3 @@ public class Student {
         this.messages = messages;
     }
 }
-
